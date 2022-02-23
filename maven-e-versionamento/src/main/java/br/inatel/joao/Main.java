@@ -2,15 +2,18 @@ package br.inatel.joao;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.nio.file.Files;
 import java.nio.file.Path;
+
 import com.opencsv.bean.CsvToBeanBuilder;
 import br.inatel.joao.model.SellGames;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
 
+    public static void main(String[] args) throws FileNotFoundException {
         try {
-            var fileReader = new FileReader(Path.of(System.getProperty("user.dir"), "vendas-games.csv").toString());
+            var fileReader = new InputStreamReader(Main.class.getClassLoader().getResourceAsStream("vendas-games.csv"));
 
             var listSellGames = new CsvToBeanBuilder<SellGames>(fileReader)
                     .withType(SellGames.class)
@@ -18,6 +21,7 @@ public class Main {
                     .build().parse();
 
             for (var sellGames : listSellGames) {
+
                 System.out.println("rank: " + sellGames.getRank());
                 System.out.println("name: " + sellGames.getName());
                 System.out.println("platform: " + sellGames.getPlatform());

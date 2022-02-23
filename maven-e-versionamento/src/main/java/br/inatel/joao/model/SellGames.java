@@ -2,8 +2,7 @@ package br.inatel.joao.model;
 
 import lombok.Data;
 
-@Data
-public class SellGames {
+@Data public class SellGames {
     private int rank;
     private String name;
     private String platform;
