@@ -24,11 +24,11 @@ public class Stack implements IStack {
 
     @Override
     public int pop() throws EmptyStackException {
-        if(isEmpty()) {
+        if (isEmpty()) {
             throw new EmptyStackException();
         }
 
-        int elem = elements.remove(length-1);
+        int elem = elements.remove(length - 1);
         length--;
 
         return elem;
