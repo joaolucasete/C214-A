@@ -1,4 +1,4 @@
-name: CI for testing with Maven
+name: StackCI
 
 on:
   push:
