@@ -33,4 +33,5 @@ public class Stack implements IStack {
 
         return elem;
     }
+    
 }
