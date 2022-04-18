@@ -2,8 +2,7 @@ name: CI for testing with Maven
 
 on:
   push:
-    paths: 
-      - "continuous-integration/**"
+    branches: [ project/continuous-integration ]
   pull_request:
     branches: [ main ]
     
